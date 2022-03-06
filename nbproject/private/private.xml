@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/gustavo/NetBeansProjects/sisWebJee2/src/java/br/com/siswebjee2/model/EnderecoBean.java</file>
-            <file>file:/home/gustavo/NetBeansProjects/sisWebJee2/web/WEB-INF/web.xml</file>
             <file>file:/home/gustavo/NetBeansProjects/sisWebJee2/src/java/br/com/siswebjee2/controller/ProfissionalServletEditar.java</file>
             <file>file:/home/gustavo/NetBeansProjects/sisWebJee2/src/java/br/com/siswebjee2/controller/ProfissionalServletCadastrar.java</file>
             <file>file:/home/gustavo/NetBeansProjects/sisWebJee2/src/java/br/com/siswebjee2/controller/ProfissionalServletPesquisar.java</file>
             <file>file:/home/gustavo/NetBeansProjects/sisWebJee2/web/base/editar.jsp</file>
-            <file>file:/home/gustavo/NetBeansProjects/sisWebJee2/web/base/novo.jsp</file>
+            <file>file:/home/gustavo/NetBeansProjects/sisWebJee2/src/java/br/com/siswebjee2/model/ProfissionalBean.java</file>
         </group>
     </open-files>
 </project-private>

@@ -60,24 +60,24 @@
         </div>
         <div class="campo">
             <label>Número </label>
-            <input type="text" name="numero" id="numero" size="5" maxlength="5" value="${endereco.getNumero()}" required>
+            <input type="text" name="numero" id="numero" size="5" maxlength="5" value="<%=enderecoBean.getNumero()%>" required>
         </div>
         <div class="campo">
             <label>Complemento </label>
-            <input type="text" name="complemento" id="complemento" size="15" maxlength="15" value="${endereco.getComplemento()}">
+            <input type="text" name="complemento" id="complemento" size="15" maxlength="15" value="<%=enderecoBean.getComplemento()%>">
         </div>
         <div class="campo">
             <label>Bairro </label>
-            <input type="text" name="bairro" size="20" maxlength="20" id="bairro" required value="${endereco.getBairro()}">
+            <input type="text" name="bairro" size="20" maxlength="20" id="bairro" required value="<%=enderecoBean.getBairro()%>">
         </div>
         <div class="campo">
             <label>Cidade </label>
-            <input type="text" name="cidade" size="20" maxlength="20" id="cidade" required value="${endereco.getCidade()}">
+            <input type="text" name="cidade" size="20" maxlength="20" id="cidade" required value="<%=enderecoBean.getCidade()%>">
         </div>
         <div class="campo">
             <label>Estado </label>
             <select name="estado" id="estado">
-                <option value="${endereco.getEstado()}" selected="selected">${endereco.getEstado()}</option>
+                <option value="<%=enderecoBean.getEstado()%>" selected="selected"><%=enderecoBean.getEstado()%></option>
                 <option value="NF">Não informado</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
@@ -111,7 +111,7 @@
         <div class="campo">
             <label>CEP </label>
             <input type="text" name="cep" id="cep" size="9" required maxlength="9" onkeypress="mascaraCampo(this, '#####-###'); return somenteNumero(event);"
-                   value="${endereco.getCep()}"> <br>
+                   value="<%=enderecoBean.getCep()%>"> <br>
         </div>
     </fieldset>
 
@@ -173,8 +173,8 @@
         </div>
         <div class="campo">
             <label>Data de validade</label>
-            <input type="text" name="documentoval" id="documentoval" size="10" required maxlength="10" onkeypress="mascaraCampo(this, '##-##-####'); return somenteNumero(event);"
-                   value="<%= profissionalBean.getDocumentoval()%>">
+            <input type="text" name="documentoval" id="documentoval" size="10" required maxlength="10" value="<%= formato.format(profissionalBean.getDocumentoval())%>" onkeypress="mascaraCampo(this, '##-##-####'); return somenteNumero(event);">
+             <input type="hidden" name="documentoval" value="<%= formato.format(profissionalBean.getDocumentoval())%>">
         </div>
     </fieldset>
 
@@ -213,7 +213,7 @@
     </div>
 
     <div class="campo">
-        <button class="botao" type="submit" name="btAtualizar" value="Atualizar"></button>
+        <button class="botao" type="submit" name="btAtualizar" value="Atualizar"> Atualizar </button>
         <button class="botao" type="reset" name="btLimpar" value="Limpar"> Limpar </button>
     </div>
 

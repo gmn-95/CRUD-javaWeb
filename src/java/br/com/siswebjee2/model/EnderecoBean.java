@@ -61,7 +61,6 @@ public class EnderecoBean {
     
     public boolean gravarInformacao(ProfissionalBean profissionalBean){
         String sql = "SELECT profissional.codigo from profissional where profissional.cpf = '" + profissionalBean.getCpf() + "'";
-        System.out.println(sql);
         try {
             
             PreparedStatement instrucao = conexao.prepareStatement(sql);
@@ -131,12 +130,12 @@ public class EnderecoBean {
         
     }
     
-    public boolean excluirInformacao(ProfissionalBean profissionalBean){
+    public boolean excluirInformacao(int codigo){
         String sql = "DELETE FROM endereco WHERE id_profissional = ?";
         
         try {
             PreparedStatement instrucao = conexao.prepareStatement(sql);
-            instrucao.setInt(1, profissionalBean.getCodigo());
+            instrucao.setInt(1, codigo);
             instrucao.executeUpdate();
             instrucao.close();
             return true;

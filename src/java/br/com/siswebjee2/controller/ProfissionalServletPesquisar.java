@@ -61,11 +61,11 @@ public class ProfissionalServletPesquisar extends HttpServlet {
             else{
                 profissionao_um = profissionalBean.buscarInformacao(Integer.parseInt(valorProcurado));
                 endereco_um = enderecoBean.buscaInformacao(profissionao_um);
-                //System.out.println("valor =" + endereco_um.getBairro());
                 resposta = "index.jsp?acao=" + extra;
                 request.removeAttribute("profissional");
                 request.setAttribute("endereco", endereco_um);
                 request.setAttribute("profissional", profissionao_um);
+                System.out.println("teste excluir");
                 
             }
         }

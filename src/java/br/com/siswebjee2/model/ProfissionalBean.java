@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
@@ -119,7 +120,7 @@ public class ProfissionalBean {
             instrucao.setInt(17, this.getVinculotipo());
             instrucao.setString(18, this.getStatus());
             instrucao.setString(19, this.getObs());
-            
+            System.out.println(this.getDocumentoval());
             instrucao.execute();
             instrucao.close();
             return true;
@@ -160,6 +161,8 @@ public class ProfissionalBean {
             instrucao.setString(18, this.getStatus());
             instrucao.setString(19, this.getObs());
             instrucao.setInt(20, this.getCodigo());
+            
+            System.out.println(this.getDocumentoval());
             
             instrucao.executeUpdate();
             instrucao.close();
@@ -216,7 +219,9 @@ public class ProfissionalBean {
                 profissionalBean.setVinculotipo(resultado.getInt("vinculotipo"));
                 profissionalBean.setStatus(resultado.getString("status"));
                 profissionalBean.setObs(resultado.getString("obs"));
-                                        
+                
+                System.out.println(resultado.getString("documentoval"));
+                 System.out.println(resultado.getString("datanasc"));
             }
             else{
                 profissionalBean = null;
@@ -276,6 +281,8 @@ public class ProfissionalBean {
                 profissionalBean.setObs(resultado.getString("obs"));
                 
                 listaProfissional.add(profissionalBean);
+                System.out.println(resultado.getString("documentoval"));
+                 System.out.println(resultado.getString("datanasc"));
             }
             instrucao.close();
             resultado.close();
@@ -319,7 +326,10 @@ public class ProfissionalBean {
                 profissionalBean.setStatus(resultado.getString("status"));
                 profissionalBean.setObs(resultado.getString("obs"));
                 
-                listaProfissional.add(profissionalBean);
+                listaProfissional.add(profissionalBean);    
+                System.out.println(resultado.getString("documentoval"));
+                System.out.println(resultado.getString("datanasc"));
+                
             }
             
             instrucao.close();

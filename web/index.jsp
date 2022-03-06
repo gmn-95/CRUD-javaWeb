@@ -1,4 +1,4 @@
-<%-- 
+ <%-- 
     Document   : index
     Created on : 22 de fev de 2022, 15:13:28
     Author     : gustavo
@@ -25,15 +25,15 @@
         else if(acao.equals("editar")){
             opcao = "base/editar.jsp";
         }
-        else if(acao.equals("apagar")){
-            opcao = "base/apagar.jsp";
+        else if(acao.equals("excluir")){
+            opcao = "base/excluir.jsp";
         }
         else if(acao.equals("listar")){
             opcao = "base/listar.jsp";
+            System.out.println("listar");
         }
         else if(acao.equals("home")){
             opcao = "base/home.jsp";
-            System.out.println("home");
         }
         else if(acao.equals("confirma")){
             opcao = "base/confirma.jsp?tipo="
@@ -82,7 +82,7 @@
                     <ul>
                     <li><a href="index.jsp?acao=novo">Novo</a></li>
                     <li><a href="index.jsp?acao=pesquisar&extra=editar">Editar</a></li>
-                    <li><a href="index.jsp?acao=apagar">Excluir</a></li>
+                    <li><a href="index.jsp?acao=pesquisar&extra=excluir">Excluir</a></li>
                     <li><a href="index.jsp?acao=listar">Listar</a></li>
                  </ul>
                 </nav>
