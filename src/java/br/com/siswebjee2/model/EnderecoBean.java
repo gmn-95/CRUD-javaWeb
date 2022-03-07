@@ -59,11 +59,12 @@ public class EnderecoBean {
         this.complemento = complemento;
     }
     
-    public boolean gravarInformacao(ProfissionalBean profissionalBean){
-        String sql = "SELECT profissional.codigo from profissional where profissional.cpf = '" + profissionalBean.getCpf() + "'";
+    public boolean gravarInformacao(String cpf){
+        String sql = "SELECT profissional.codigo from profissional where profissional.cpf = ?";
         try {
             
             PreparedStatement instrucao = conexao.prepareStatement(sql);
+            instrucao.setString(1, cpf);
             ResultSet resultado = instrucao.executeQuery();
             
             if(resultado.next()){
@@ -103,7 +104,7 @@ public class EnderecoBean {
         
     }
     
-    public boolean atualizarInformacao(ProfissionalBean profissionalBean){
+    public boolean atualizarInformacao(int codigo){
         
         String sql = "UPDATE endereco SET bairro = ?, cidade = ?, logradouro = ?, "
                 + "cep = ?, estado = ?, numero = ?, complemento = ? WHERE id_profissional = ?";
@@ -117,7 +118,7 @@ public class EnderecoBean {
             instrucao.setString(5, this.getEstado());
             instrucao.setString(6, this.getNumero());
             instrucao.setString(7, this.getComplemento());
-            instrucao.setInt(8, profissionalBean.getCodigo());
+            instrucao.setInt(8, codigo);
             
             instrucao.executeQuery();
             instrucao.close();

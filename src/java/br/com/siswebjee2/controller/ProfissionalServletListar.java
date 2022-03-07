@@ -9,7 +9,6 @@ import br.com.siswebjee2.model.EnderecoBean;
 import br.com.siswebjee2.model.ProfissionalBean;
 import br.com.siswebjee2.util.Conexao;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

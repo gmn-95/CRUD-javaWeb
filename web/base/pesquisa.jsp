@@ -10,7 +10,7 @@
     String extra = request.getParameter("extra");
 %>
 
-<form style="background-color: gray;" method="post" action="ProfissionalServletPesquisar?extra=<%= extra%>" onsubmit="return validaForm(this);">
+<form method="post" action="ProfissionalServletPesquisar?extra=<%= extra%>" onsubmit="return validaForm(this);">
     
     <div class="pesquisar">
         <p>

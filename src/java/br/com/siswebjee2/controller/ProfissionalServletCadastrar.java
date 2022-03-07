@@ -28,21 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ProfissionalServletCadastrar", urlPatterns = {"/ProfissionalServletCadastrar"})
 public class ProfissionalServletCadastrar extends HttpServlet {
 
-   
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-    }
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
@@ -97,7 +83,7 @@ public class ProfissionalServletCadastrar extends HttpServlet {
                 profissionalBean.setConexao(jdbc.getConnection());
                 enderecoBean.setConexao(jdbc.getConnection());
                 
-                if(profissionalBean.gravarInformacao() && enderecoBean.gravarInformacao(profissionalBean)){
+                if(profissionalBean.gravarInformacao() && enderecoBean.gravarInformacao(profissionalBean.getCpf())){
                     resultado = "index.jsp?acao=confirma&tipo=gravacao&ok=sim";
                 }
                 else{
@@ -114,7 +100,15 @@ public class ProfissionalServletCadastrar extends HttpServlet {
         //RETORNA DE VOLTA PARA A VIEW
         RequestDispatcher view = request.getRequestDispatcher(resultado);
         view.forward(request, response);
+        
     }
+   
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        processRequest(request, response);
+    }    
 
     @Override
     public String getServletInfo() {

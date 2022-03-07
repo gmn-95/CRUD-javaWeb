@@ -81,6 +81,51 @@ body{
   margin-top: 70px;
 }
 
+.tabela{
+    height: 50px;
+    width: 100%;
+    margin-bottom : .5em;
+    table-layout: fixed;
+    text-align: center;
+    margin-top: 30px;
+    background-color: #392f40;
+    color: white;
+    border-radius: 5px;
+}
+
+.tabela th{
+    background-color: #392f40;
+    padding-top: 5px;
+    border-radius: 10px;
+}
+
+.tabela tbody tr{
+    background-color: white;
+    padding-left:  70px;
+}
+
+.tabela tbody tr td{
+    height: 30px;
+    background-color: white;
+    color: #392f40;
+    font-weight: bold;
+    border-radius: 10px;
+    
+}
+
+.campo-tabela{
+    
+} 
+
+.campo-tabela button{
+    margin-left: 40px;
+
+}
+
+.campo-tabela p {
+    text-align: center;
+}
+
 form{
     margin-top: 80px;
 }
@@ -252,25 +297,6 @@ fieldset.grupo .campo{
 
 .botao, select{
   cursor: pointer;
-}
-
-table, tr, td{
-    border: 2px groove;
-    border-color: royalblue;
-    padding: 3px;
-    background-color: skyblue;
-}
-
-.pesquisar table tr td{
-    border-style: none;
-    border-width: 0;
-    border-color: white;
-    
-    background-color: beige;
-    
-    padding: 5px;
-    line-height: calc;
-    line-height: 25px;
 }
 
 @media(max-width:  925px){

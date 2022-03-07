@@ -4,23 +4,32 @@
     Author     : gustavo
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<style type="text/css"><%@include file="/util/style.css" %></style>
+
 <%@page import="br.com.siswebjee2.model.ProfissionalBean, java.util.List, java.util.ArrayList" %>
 
-<form style="background-color: gray;" method="post" action="ProfissionalServletListar" onsubmit="return validaForm(this);">
+
+<form method="post" action="ProfissionalServletListar" onsubmit="return validaForm(this);">
     
-    <div class="pesquisar">
+    <div class="campo-tabela">
         <p>
-            <strong>Litar</strong><br>
-            Ordem de pesquisa:
+            <strong>Listar</strong><br>
+            Listar por :
             <input type="radio" name="ordem" id="tipoPesquisa" value="codigo" checked="checked"> Código |
             <input type="radio" name="ordem" id="tipoPesquisa" value="nome"> Nome |
             <input type="radio" name="ordem" id="tipoPesquisa" value="cpf"> CPF <br>
         </p>
-        <table cellpadding="1" cellpadding="1">
-            <tr>
-                <td>Código</td><td>Nome</td><td>CPF</td><td>Editar</td><td>Excluir</td>
-            </tr>
+        <table class="tabela">
+            <thead>
+               <tr>
+                    <th>Código</th><th>Nome</th><th>CPF</th><th>Editar</th><th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            
                
             <%
                 List<ProfissionalBean> listaProfissional = (List) request.getAttribute("profissional");
@@ -30,29 +39,31 @@
                     for(int i = 0; i < listaProfissional.size(); i++){
                         ProfissionalBean pro_novo = listaProfissional.get(i);
             %>
-            <tr>
-                <td><%= pro_novo.getCodigo()%></td>
-                <td><%= pro_novo.getNome()%></td>
-                <td><%= pro_novo.getCpf()%></td>
-                <td><a href="ProfissionalServletPesquisar?valorProcurado=<%= pro_novo.getCodigo()%>&extra=editar">Clique aqui para Editar</td>
-                <td><a href="ProfissionalServletPesquisar?valorProcurado=<%= pro_novo.getCodigo()%>&extra=excluir">Clique aqui para Excluir</td>
-            </tr>
+                <tr>
+                    <td><%= pro_novo.getCodigo()%></td>
+                    <td><%= pro_novo.getNome()%></td>
+                    <td><%= pro_novo.getCpf()%></td>
+                    <td><a href="ProfissionalServletPesquisar?valorProcurado=<%= pro_novo.getCodigo()%>&extra=editar">Editar</td>
+                    <td><a href="ProfissionalServletPesquisar?valorProcurado=<%= pro_novo.getCodigo()%>&extra=excluir">Excluir</td>
+                </tr>
 
-            
+            </tbody>
             <%
                     cont++;
                     }
                 }
             %>
             
+            
+        </table>
             <tr>
                 <td colspan="3">Foram encontrados <%= cont%> números de registos</td>
             </tr>
-        </table>
-
         <div class="campo">
             <button class="botao" type="submit" name="btListar" value="Listar"> Listar </button>
         </div>
     </div>
-    
+            
 </form>
+
+

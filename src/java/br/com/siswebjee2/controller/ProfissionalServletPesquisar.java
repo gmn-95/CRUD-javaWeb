@@ -34,11 +34,6 @@ public class ProfissionalServletPesquisar extends HttpServlet {
         String tipoPesquisa = request.getParameter("tipoPesquisa");
         String extra = request.getParameter("extra");
         String resposta = null;
-        List<ProfissionalBean> listaProfissional = null;
-        List<EnderecoBean> listaEndereco = null;
-        
-        ProfissionalBean profissionao_um = null;
-        EnderecoBean endereco_um = new EnderecoBean();
         
         //comunicação direta com o BEAN
         ProfissionalBean profissionalBean = new ProfissionalBean();
@@ -49,8 +44,8 @@ public class ProfissionalServletPesquisar extends HttpServlet {
             enderecoBean.setConexao(jdbc.getConnection());
             
             if(tipoPesquisa != null){
-                listaProfissional = profissionalBean.listarInformacoes(tipoPesquisa, valorProcurado, "codigo");
-                listaEndereco = enderecoBean.listarInformacoes(tipoPesquisa, valorProcurado, "codigo");
+                List<ProfissionalBean> listaProfissional = profissionalBean.listarInformacoes(tipoPesquisa, valorProcurado, "codigo");
+                List<EnderecoBean> listaEndereco = enderecoBean.listarInformacoes(tipoPesquisa, valorProcurado, "codigo");
                 
                 resposta = "index.jsp?acao=pesquisa&extra=" + extra;
                 request.removeAttribute("profissional");
@@ -59,8 +54,8 @@ public class ProfissionalServletPesquisar extends HttpServlet {
                 
             }
             else{
-                profissionao_um = profissionalBean.buscarInformacao(Integer.parseInt(valorProcurado));
-                endereco_um = enderecoBean.buscaInformacao(profissionao_um);
+                ProfissionalBean profissionao_um = profissionalBean.buscarInformacao(Integer.parseInt(valorProcurado));
+                EnderecoBean endereco_um = enderecoBean.buscaInformacao(profissionao_um);
                 resposta = "index.jsp?acao=" + extra;
                 request.removeAttribute("profissional");
                 request.setAttribute("endereco", endereco_um);
@@ -75,16 +70,15 @@ public class ProfissionalServletPesquisar extends HttpServlet {
         RequestDispatcher view = request.getRequestDispatcher(resposta);
         view.forward(request, response);
     }
-    
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
