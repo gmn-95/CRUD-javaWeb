@@ -64,9 +64,9 @@ function numerosDecimais(e, field){
 }
 
 function validaForm(form){
-    if(form.salario.value == ""){
+    if(form.salario.value === ""){
         alert("Insira um valor para o campo salário!");
-        form.saalrio.focus();
+        form.salario.focus();
         return false;
     }
 }

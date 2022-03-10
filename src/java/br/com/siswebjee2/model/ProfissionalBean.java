@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
@@ -92,14 +93,14 @@ public class ProfissionalBean {
         this.obs = obs;
     }
     
-    public boolean gravarInformacao(){
+    public boolean gravarInformacao() {
         String sql = "INSERT INTO profissional(datacad, nome, sexo, datanasc, "
                 + "telfixo, telcel, email, "
                 + "rg, cpf, ctps, profissao, documentotipo, documentonr, documentoval, "
                 + "cargo, salario, vinculotipo, status, obs) " 
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
-        try {
+        try{
             PreparedStatement instrucao = conexao.prepareStatement(sql);
             instrucao.setDate(1, new java.sql.Date(this.getDatacad().getTime()));
             instrucao.setString(2, this.getNome());
@@ -120,14 +121,16 @@ public class ProfissionalBean {
             instrucao.setInt(17, this.getVinculotipo());
             instrucao.setString(18, this.getStatus());
             instrucao.setString(19, this.getObs());
-            System.out.println(this.getDocumentoval());
+           
             instrucao.execute();
             instrucao.close();
             return true;
-        } catch (SQLException e) {
+        }
+        catch (SQLException e){
             e.printStackTrace();
             return false;
         }
+        
     }
     
     public boolean atualizarInformacao(){

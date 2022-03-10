@@ -60,7 +60,6 @@ public class ProfissionalServletPesquisar extends HttpServlet {
                 request.removeAttribute("profissional");
                 request.setAttribute("endereco", endereco_um);
                 request.setAttribute("profissional", profissionao_um);
-                System.out.println("teste excluir");
                 
             }
         }

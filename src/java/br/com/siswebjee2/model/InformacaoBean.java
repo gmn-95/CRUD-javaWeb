@@ -127,7 +127,7 @@ public class InformacaoBean {
     }
     
     public List<InformacaoBean> listarInformacoes(String tabela, String ordem){
-        List<InformacaoBean> listaInfo = new ArrayList<InformacaoBean>();
+        List<InformacaoBean> listaInfo = new ArrayList<>();
         
         String sql = "SELECT * FROM " + tabela + " ORDER BY " + ordem;
         try {
@@ -141,6 +141,7 @@ public class InformacaoBean {
                 
                 listaInfo.add(info);
             }
+            
             resultado.close();
             instrucao.close();
             

@@ -11,4 +11,4 @@
     String ok = request.getParameter("ok");
 %>
 
-<p> O processo de <%= tipo %>, <%= ok%> foi concluído com sucesso! </p>
+<h1 id="confirmar"> O processo de <%= tipo %>, <%= ok%> foi concluído com sucesso! </h1>

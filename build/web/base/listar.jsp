@@ -28,7 +28,6 @@
                 </tr>
             </thead>
             <tbody>
-                
             
                
             <%
@@ -43,8 +42,8 @@
                     <td><%= pro_novo.getCodigo()%></td>
                     <td><%= pro_novo.getNome()%></td>
                     <td><%= pro_novo.getCpf()%></td>
-                    <td><a href="ProfissionalServletPesquisar?valorProcurado=<%= pro_novo.getCodigo()%>&extra=editar">Editar</td>
-                    <td><a href="ProfissionalServletPesquisar?valorProcurado=<%= pro_novo.getCodigo()%>&extra=excluir">Excluir</td>
+                    <td><a href="ProfissionalServletPesquisar?valorProcurado=<%= pro_novo.getCodigo()%>&extra=Editar">Editar</td>
+                    <td><a href="ProfissionalServletPesquisar?valorProcurado=<%= pro_novo.getCodigo()%>&extra=Excluir">Excluir</td>
                 </tr>
 
             </tbody>
@@ -59,7 +58,7 @@
             <tr>
                 <td colspan="3">Foram encontrados <%= cont%> números de registos</td>
             </tr>
-        <div class="campo">
+        <div class=".campo-btListar">
             <button class="botao" type="submit" name="btListar" value="Listar"> Listar </button>
         </div>
     </div>

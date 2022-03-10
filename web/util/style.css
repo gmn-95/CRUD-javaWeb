@@ -39,6 +39,7 @@ body{
   border-radius: 3px;
   text-align: center;
   padding-right: 32%;
+  padding-left: 20%;
 
 }
 
@@ -113,9 +114,9 @@ body{
     
 }
 
-.campo-tabela{
-    
-} 
+.campo{
+    margin-top: 10px;
+}
 
 .campo-tabela button{
     margin-left: 40px;
@@ -126,6 +127,14 @@ body{
     text-align: center;
 }
 
+.tabela tbody tr td a{
+  color: blue;
+}
+
+.tabela tbody tr td a:hover{
+  color: #392f40;
+}
+
 form{
     margin-top: 80px;
 }
@@ -134,6 +143,11 @@ form{
     padding-left: 50px;
 }
 
+#confirmar{
+    text-align: center;
+    padding-top: 15%;
+    height: 38vh;
+}
 
 #rodape{
   height: 100px;
@@ -141,7 +155,7 @@ form{
   float: left;
   margin-right: 83%;
   margin-top: 10%; 
-  position: relative;
+  position: inherit;
   bottom: 0;
   background-color: #2E2633;  
   color: white;
@@ -240,7 +254,7 @@ input, select, button{
   border-radius: 5px;
 }
 
-.campo{
+.campo .campo-btListar{
   margin-bottom: 1em;
 }
 
@@ -278,7 +292,7 @@ fieldset.grupo .campo{
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   align-items: center;
-  width: 100px;
+  width: 110px;
   text-align: center;
   padding: 0.2em 0.6em;
   position: relative;

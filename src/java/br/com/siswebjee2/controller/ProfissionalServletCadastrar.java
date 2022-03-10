@@ -9,15 +9,20 @@ import br.com.siswebjee2.model.EnderecoBean;
 import br.com.siswebjee2.model.ProfissionalBean;
 import br.com.siswebjee2.util.Conexao;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.tomcat.dbcp.dbcp2.SQLExceptionList;
 
 /**
  *
@@ -91,10 +96,11 @@ public class ProfissionalServletCadastrar extends HttpServlet {
                 }
             }
             
-        } catch (NumberFormatException | ParseException e) {
+        } 
+        catch (NumberFormatException | ParseException e) {
             e.printStackTrace();
         }
-        
+ 
         jdbc.desconectar();
         
         //RETORNA DE VOLTA PARA A VIEW

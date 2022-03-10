@@ -11,26 +11,29 @@
     String acao;
     String opcao;
     String extra;
+    String erro;
 %>
 
 <!DOCTYPE html>
 
 <%
+    
     acao = request.getParameter("acao");
+    //erro = request.getParameter("erro");
+    
     if(acao != null){
         
         if(acao.equals("novo")){
             opcao = "base/novo.jsp";
         }
-        else if(acao.equals("editar")){
+        else if(acao.equals("Editar")){
             opcao = "base/editar.jsp";
         }
-        else if(acao.equals("excluir")){
+        else if(acao.equals("Excluir")){
             opcao = "base/excluir.jsp";
         }
         else if(acao.equals("listar")){
             opcao = "base/listar.jsp";
-            System.out.println("listar");
         }
         else if(acao.equals("home")){
             opcao = "base/home.jsp";
@@ -43,6 +46,9 @@
         else if(acao.equals("pesquisar")){
             extra = request.getParameter("extra");
             opcao = "base/pesquisa.jsp?extra=" + extra;
+        }
+        else if(acao.equals("erro")){
+            opcao = "base/novo.jsp?erro=false";
         }
     }
     else{
@@ -61,7 +67,7 @@
         
     </head>
     <body>
-
+        
         <div id="tudo">
             <nav>
                 <input type="checkbox" id="check">
@@ -72,8 +78,6 @@
                 
                 <ul>
                     <li><a class="active" href="index.jsp?acao=home">Home</a></li>
-                    <li><a  href="index.jsp?acao=home">Contatos</a></li>
-                    <li><a  href="index.jsp?acao=home">Sobre</a></li>
                 </ul>
             </nav>
             
@@ -81,8 +85,8 @@
                 <nav>
                     <ul>
                     <li><a href="index.jsp?acao=novo">Novo</a></li>
-                    <li><a href="index.jsp?acao=pesquisar&extra=editar">Editar</a></li>
-                    <li><a href="index.jsp?acao=pesquisar&extra=excluir">Excluir</a></li>
+                    <li><a href="index.jsp?acao=pesquisar&extra=Editar">Editar</a></li>
+                    <li><a href="index.jsp?acao=pesquisar&extra=Excluir">Excluir</a></li>
                     <li><a href="index.jsp?acao=listar">Listar</a></li>
                  </ul>
                 </nav>

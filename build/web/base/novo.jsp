@@ -10,9 +10,13 @@
 <%@include file="/util/funcoes.jsp" %>
 
 
+<%
+    String erro = request.getParameter("erro");
+%>
+
 <form class="formulario" method="post" action="ProfissionalServletCadastrar" onsubmit="return validaForm(this);">
     
-    
+
     
     <fieldset class="grupo">
         <div class="campo">
@@ -104,7 +108,7 @@
         </div>
         <div class="campo">
             <label>CEP </label>
-            <input type="text" name="cep" id="cep" size="9" required maxlength="9" onkeypress="mascaraCampo(this, '#####-###'); return somenteNumero(event);"> <br>
+            <input type="text" name="cep" id="cep" size="9" required maxlength="9" onkeypress="mascaraCampo(this, '#####-###'); return somenteNumero(event); "> <br>
         </div>
     </fieldset>
 

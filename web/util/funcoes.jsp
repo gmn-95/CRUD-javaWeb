@@ -4,6 +4,7 @@
     Author     : gustavo
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page import="br.com.siswebjee2.model.ProfissionalBean"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -21,7 +22,7 @@
         
         InformacaoBean infoCs = new InformacaoBean();
         Conexao jdbc = new Conexao();
-        
+
         if(jdbc.conectar()){
             infoCs.setConexao(jdbc.getConnection());
             List infoLista = infoCs.listarInformacoes(tabela, ordem);
