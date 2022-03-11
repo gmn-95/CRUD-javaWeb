@@ -165,8 +165,6 @@ public class ProfissionalBean {
             instrucao.setString(19, this.getObs());
             instrucao.setInt(20, this.getCodigo());
             
-            System.out.println(this.getDocumentoval());
-            
             instrucao.executeUpdate();
             instrucao.close();
             return true;
@@ -222,9 +220,6 @@ public class ProfissionalBean {
                 profissionalBean.setVinculotipo(resultado.getInt("vinculotipo"));
                 profissionalBean.setStatus(resultado.getString("status"));
                 profissionalBean.setObs(resultado.getString("obs"));
-                
-                System.out.println(resultado.getString("documentoval"));
-                 System.out.println(resultado.getString("datanasc"));
             }
             else{
                 profissionalBean = null;
@@ -284,8 +279,6 @@ public class ProfissionalBean {
                 profissionalBean.setObs(resultado.getString("obs"));
                 
                 listaProfissional.add(profissionalBean);
-                System.out.println(resultado.getString("documentoval"));
-                 System.out.println(resultado.getString("datanasc"));
             }
             instrucao.close();
             resultado.close();
@@ -329,9 +322,7 @@ public class ProfissionalBean {
                 profissionalBean.setStatus(resultado.getString("status"));
                 profissionalBean.setObs(resultado.getString("obs"));
                 
-                listaProfissional.add(profissionalBean);    
-                System.out.println(resultado.getString("documentoval"));
-                System.out.println(resultado.getString("datanasc"));
+                listaProfissional.add(profissionalBean);
                 
             }
             

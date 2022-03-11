@@ -70,7 +70,6 @@ public class EnderecoBean {
             if(resultado.next()){
                 
                 this.id_profissional = resultado.getInt("codigo");
-                System.out.println(this.id_profissional);
                 resultado.close();
                 
                 String sql2 = "INSERT INTO endereco (id_profissional, bairro, cidade, logradouro, cep, estado, numero, complemento) "

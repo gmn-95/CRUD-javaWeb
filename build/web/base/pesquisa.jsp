@@ -12,7 +12,7 @@
     String extra = request.getParameter("extra");
 %>
 
-<form method="post" action="ProfissionalServletPesquisar?extra=<%= extra%>" onsubmit="return validaForm(this);">
+<form class=".formulario-2" method="post" action="ProfissionalServletPesquisar?extra=<%= extra%>" onsubmit="return validaForm(this);">
     
     <div class="campo-tabela">
         <fildset>

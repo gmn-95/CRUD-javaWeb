@@ -17,7 +17,7 @@
     SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 %>
 
-<form class="formulario" method="post" action="ProfissionalServletExcluir" onsubmit="return validaForm(this);">
+<form class=".formulario-2" method="post" action="ProfissionalServletExcluir" onsubmit="return validaForm(this);">
     
     
     <fieldset class="grupo">
@@ -62,7 +62,7 @@
         </div>
         <div class="campo">
             <label>Número </label>
-            <input type="text" name="numero" disabled="true" id="numero" size="5" maxlength="5" value="$<%=enderecoBean.getNumero()%>" required>
+            <input type="text" name="numero" disabled="true" id="numero" size="5" maxlength="5" value="<%=enderecoBean.getNumero()%>" required>
         </div>
         <div class="campo">
             <label>Complemento </label>

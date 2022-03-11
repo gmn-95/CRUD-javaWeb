@@ -6,21 +6,18 @@
     box-sizing: border-box;
 }
 
-
-html, body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
+html{
+    height: 100vh;
 }
 
 body{
   font-family: Nunito, sans-serif;
-  min-height: 100%;
+  height: 100vh;
   background-color: white;
 }
 
-* html #tudo {
-  height: 100%; /* hack para IE6 que trata height como min-height */
+#tudo {
+  height: 100vh; /* hack para IE6 que trata height como min-height */
 }
 
 
@@ -69,12 +66,10 @@ body{
 }
 
 #principal{
-  height: 50%;
-  width: 65%;
-  float: left;
-  margin-left: 17%;
-  margin-right: 83%;
+  height: auto;
   font-family: Nunito, sans-serif;
+  margin-left: 80px;
+  margin-right: 80px;
 
 }
 
@@ -118,8 +113,12 @@ body{
     margin-top: 10px;
 }
 
+.campo-tabela{
+    margin-top: 40px;
+}
+
 .campo-tabela button{
-    margin-left: 40px;
+    margin-left: 60px;
 
 }
 
@@ -135,7 +134,19 @@ body{
   color: #392f40;
 }
 
-form{
+.formulario{
+    margin-left: 80px;
+    margin-right: 80px;
+    align-items: center;
+    height: auto;
+    margin-top: 80px;
+}
+
+.formulario-2{
+    margin-left: 80px;
+    margin-right: 80px;
+    align-items: center;
+    height: auto;
     margin-top: 80px;
 }
 
@@ -150,12 +161,11 @@ form{
 }
 
 #rodape{
-  height: 100px;
+  height: 120px;
   width: 100%;
-  float: left;
   margin-right: 83%;
   margin-top: 10%; 
-  position: inherit;
+  position: relative;
   bottom: 0;
   background-color: #2E2633;  
   color: white;

@@ -4,7 +4,10 @@
     Author     : gustavo
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+  
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <%!
 
@@ -60,6 +63,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8">
+        
         <title>Cadastro de Profissionais</title>
         <link rel="stylesheet" type="text/css" href="util/style.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -84,18 +89,22 @@
             <div id="cabecalho">
                 <nav>
                     <ul>
-                    <li><a href="index.jsp?acao=novo">Novo</a></li>
-                    <li><a href="index.jsp?acao=pesquisar&extra=Editar">Editar</a></li>
-                    <li><a href="index.jsp?acao=pesquisar&extra=Excluir">Excluir</a></li>
-                    <li><a href="index.jsp?acao=listar">Listar</a></li>
-                 </ul>
+                        <li><a href="index.jsp?acao=novo">Novo</a></li>
+                        <li><a href="index.jsp?acao=pesquisar&extra=Editar">Editar</a></li>
+                        <li><a href="index.jsp?acao=pesquisar&extra=Excluir">Excluir</a></li>
+                        <li><a href="index.jsp?acao=listar">Listar</a></li>
+                    </ul>
                 </nav>
             </div>
        
-            <div id="principal">
-                <jsp:include page="<%= opcao%>"/>
-                
-            </div>
+            <main id="principal">
+                <jsp:include page="<%= opcao%>"/> 
+            </main>
+           
+            
+             <!--<div id="teste">
+                asdasdsasd
+            </div>*-->
       
             <footer id="rodape">
                     <p>Desenvolvedor: Gustavo Macedo <br>Copyright &copy; SisWebJee &reg;</p>

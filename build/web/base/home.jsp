@@ -11,7 +11,10 @@
         Este projeto foi desenvolvido com o intuito apenas para práticar e estudar
         
         <br><br>
-        Este CRUD foi desenvolvido utilizando as seguintes tecnologias: Java EE; JSP; JDBC; PADRÃO MVC; Banco Oracle; HTML; CSS; JS<br><br>
+        <strong>Tecnologias utilizadas</strong><br><br>
+        Este CRUD foi desenvolvido utilizando as seguintes tecnologias: Java EE; APACHE TOMCAT Versão 9; JSP; JDBC; PADRÃO MVC; Banco Oracle; HTML; CSS; JS<br><br>
+        
+        <strong>Inspiração</strong><br><br>
         O projeto foi desenvolvido com base no livro: Três maneiras de programar com Java WEB, porém utilizei apenas a ideia
         do projeto, e fiz minhas prórpias alterações, principalmente na parte de front-end.<br>
     </p>

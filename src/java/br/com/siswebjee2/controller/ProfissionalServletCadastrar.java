@@ -9,20 +9,16 @@ import br.com.siswebjee2.model.EnderecoBean;
 import br.com.siswebjee2.model.ProfissionalBean;
 import br.com.siswebjee2.util.Conexao;
 import java.io.IOException;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.tomcat.dbcp.dbcp2.SQLExceptionList;
+
 
 /**
  *
@@ -35,6 +31,9 @@ public class ProfissionalServletCadastrar extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         Conexao jdbc = new Conexao();
@@ -76,6 +75,10 @@ public class ProfissionalServletCadastrar extends HttpServlet {
             int vinculotipo = Integer.parseInt(request.getParameter("vinculotipo"));
             String status = request.getParameter("status");
             String obs = request.getParameter("obs");
+            
+            if(obs == null || obs.equals("null")){
+                obs = " ";
+            }
             
             ProfissionalBean profissionalBean = new ProfissionalBean(datacad, 
                     nome, sexo, datanasc, telfixo, telcel, email, rg, cpf, ctps, 

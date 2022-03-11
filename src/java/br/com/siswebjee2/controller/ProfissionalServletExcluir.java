@@ -26,6 +26,7 @@ public class ProfissionalServletExcluir extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         
         Conexao jdbc = new Conexao();
         int codigo = Integer.parseInt(request.getParameter("codigo"));

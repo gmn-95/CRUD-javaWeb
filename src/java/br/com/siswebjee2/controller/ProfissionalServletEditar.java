@@ -30,6 +30,7 @@ public class ProfissionalServletEditar extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         Conexao jdbc = new Conexao();
@@ -71,6 +72,9 @@ public class ProfissionalServletEditar extends HttpServlet {
             int vinculotipo = Integer.parseInt(request.getParameter("vinculotipo"));
             String status = request.getParameter("status");
             String obs = request.getParameter("obs");
+            if(obs == null || obs.equals("null")){
+                obs = " ";
+            }
             
             ProfissionalBean profissionalBean = new ProfissionalBean(codigo, datacad, 
                     nome, sexo, datanasc, telfixo, telcel, email, rg, cpf, ctps, 

@@ -11,7 +11,7 @@
 <%@page import="br.com.siswebjee2.model.ProfissionalBean, java.util.List, java.util.ArrayList" %>
 
 
-<form method="post" action="ProfissionalServletListar" onsubmit="return validaForm(this);">
+<form class=".formulario-2" method="post" action="ProfissionalServletListar" onsubmit="return validaForm(this);">
     
     <div class="campo-tabela">
         <p>

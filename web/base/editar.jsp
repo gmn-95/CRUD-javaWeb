@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <style type="text/css"><%@include file="/util/style.css" %></style>
 
 <%@page import="br.com.siswebjee2.model.ProfissionalBean, br.com.siswebjee2.model.EnderecoBean, java.util.List, java.util.ArrayList" %>
