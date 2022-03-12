@@ -17,7 +17,7 @@
     SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 %>
 
-<form class=".formulario-2" method="post" action="ProfissionalServletExcluir" onsubmit="return validaForm(this);">
+<form class="formulario" method="post" action="ProfissionalServletExcluir" onsubmit="return validaForm(this);">
     
     
     <fieldset class="grupo">
